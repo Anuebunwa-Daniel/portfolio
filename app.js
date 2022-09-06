@@ -41,26 +41,6 @@ const Storage = multer.diskStorage({
 
 const upload = multer({storage: Storage})
 
-// app.post('/upload', upload.single('image'), (req,res)=>{
-//     upload(req,res, (err)=>{
-//         if(err){
-//             console.log(err)
-//         }else{
-//             const newImage =new projectSchema({
-//                 name: req.body.desc,
-//                 img:{
-//                     data:req.file.filename,
-//                     contentType:'image/jpg'
-
-//                  }
-                
-//             })
-//             newImage.save()
-//             .then(()=>res.send('sucessfully upload'
-//             )).catch(err => console.log(err))
-//         }
-//     })
-// })
 
 app.post('/upload', upload.single('image'), async(req, res)=>{
     try {
