@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(208, 202, 202);
+}
+.navbar-brand{
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(230, 199, 23);
+    margin-left: 30px;
+    
+}
+.navbar-brand:hover{
+    color:gold;
+}
+.nav-link {
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(230, 199, 23) !important;
+    
+}
+
+.navbar-toggler{
+    background-color: white;
+    
+}
+
+#about{
+    margin-top:70px;
+    color:rgb(207, 181, 34);
+    font-size: 40px;
+    font-weight:bold;
+    text-align: center;
+    font-family: 'Garamond';
+}
+img {
+    height: 400px;
+    margin-right: 10px;
+}
+
+#one {
+    display: flex;
+    font-size: 18.5px;
+    text-align: justify;
+    line-height: 1.6;
+    font-family: 'Garamond';
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #one{
+        display: flex;
+        flex-direction:row;
+        max-width:100%;
+        font-family: 'Garamond';
+        font-size: 18.5px;
+    }
+    #one img{
+        width: 50%;
+     }
+    #name{ 
+        display:flex;
+      justify-self: flex-end;
+      font-family: 'Garamond';
+    }
+ } 
+@media screen and (min-width: 769px){
+    #one{
+        display: flex;
+        flex-direction:column;
+        max-width: 100%;
+        font-family: 'Garamond';
+    }
+    #one img{
+        display:block;
+        margin:0 auto;
+
+    }
+
+    
+}
+
+#tech{
+    
+        text-align: justify;
+        line-height: 1.6;
+        font-family: 'Garamond';
+        font-size: 18.5px; 
+}
+
+

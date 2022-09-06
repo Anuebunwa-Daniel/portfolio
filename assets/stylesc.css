@@ -1,0 +1,181 @@
+body{
+    background-color: rgb(208, 202, 202);
+}
+.navbar-brand{
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(230, 199, 23);
+    margin-left: 30px;
+    
+}
+.navbar-brand:hover{
+    color:gold;
+}
+.nav-link {
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(230, 199, 23) !important;
+    
+}
+.nav-link:hover{
+    font-size: 22px;
+    text-decoration:underline !important;
+}
+
+.navbar-toggler{
+    background-color: white;
+    
+}
+
+#about{
+    margin-top:70px;
+    color:rgb(207, 181, 34);
+    font-size: 40px;
+    font-weight:bold;
+    text-align: center;
+    font-family: 'Garamond';
+}
+ #pic{
+    height: 200px;
+    margin-right: 40px;
+}
+
+#name{
+    font-family: 'Garamond';
+  
+    font-size: 18px;
+}
+
+#one{
+    display: flex;
+    text-align: justify;
+    line-height: 1.5;;
+    font-family: 'Garamond';
+    margin-left: 5px;
+}
+@media screen and(max-width: 460px){
+    #one{
+        display: flex;
+        flex-direction:row;
+        max-width: 100%;
+        font-family: 'Garamond';
+    }
+    #one #pic{
+        width: 50%;
+    }
+    #name{
+        display: flex;
+        justify-self: flex-end;
+    }
+}
+
+@media screen and (min-width:760px){
+    #one{
+        display: flex;
+        flex-direction:column;
+        max-width: 100%;
+        font-family: 'Garamond';
+    }
+    #one #pic{
+        display:block;
+        margin:0 auto;
+
+    }   
+}
+
+#link{
+    height: 20px;
+    width: 20px;
+    margin-left:20px;
+    margin-top: 60px;
+  
+}
+
+ #link:hover{ 
+    height: 20px;
+    width: 20px;
+    animation-name: lin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count:inherit;
+ }
+    @keyframes lin {
+        0%{ 
+            transform: rotate(0deg);
+    
+        }
+        25%{ transform: rotate(90deg);
+             
+        }
+        50%{ transform: rotate(180deg);}
+        75%{ transform: rotate(270deg);}
+        100%{ transform: rotate(360deg);}
+        
+    } 
+ 
+
+#linked{
+    height: 30px;
+    /* width: auto; */
+    margin-left: 450px;
+    margin-top: 40px;
+  
+    
+}
+#insta{
+    height: 40px;
+    width: 30px;   
+}
+
+ @media  screen and (max-width: 760px){
+    #linked{
+        margin-left:250px;
+        margin-top: 40px;
+    }
+}
+#gg{
+    display: flex;
+}
+#gm{
+    height: 30px;
+    width: 50px;
+    margin-left:200px;
+    margin-top: 40px;
+}
+#gf{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:40px;
+
+}
+#gf:hover{
+    font-size: 22px;
+}
+
+@media screen and (max-width:460px){
+    #gg{
+        display:flex;
+    }
+    #gm{
+        margin-left:250px;
+        margin-top: 40px;
+    }
+    #gf{
+        margin-top:40px;
+    }
+}
+@media screen and (min-width:760px){
+    #gg{
+        display:flex;  
+    }
+    #gm{
+        margin-left:450px;
+        margin-top: 40px;
+    }
+}
+
+
+
+    
+
