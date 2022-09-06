@@ -12,7 +12,8 @@ const jwt = require('jsonwebtoken')
 const multer =require('multer')
 const app  = express()
 const mongodb = 'mongodb+srv://dahumble:A123456s@edward.kkgo9lm.mongodb.net/tochukwu'||
-//  process.env.MONGODB ||
+
+//  process.env.MONGODB || 'localhost:27017/Edward'
 
 mongoose.connect(mongodb)
 .then(()=>{

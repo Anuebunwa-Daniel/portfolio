@@ -9,12 +9,12 @@ body{
     
 }
 .navbar-brand:hover{
-    color:gold;
+    color:rgb(194, 173, 53);
 }
 .nav-link {
     font-size: 20px;
     font-weight: 700;
-    color:rgb(230, 199, 23) !important;
+    color:rgb(194, 173, 53) !important;
     
 }
 .nav-link:hover{
@@ -47,13 +47,13 @@ body{
 }
 
 #one{
-    display: flex;
+    /* display: flex; */
     text-align: justify;
     line-height: 1.5;;
     font-family: 'Garamond';
     margin-left: 5px;
 }
-@media screen and(max-width: 460px){
+@media screen and(max-width: 360px){
     #one{
         display: flex;
         flex-direction:row;
