@@ -27,7 +27,7 @@ app.set('view engine', 'ejs')
 app.use(cookieParser())
 app.use('/assets', express.static('assets'))
 app.use(express.urlencoded ({extended:true}))
-app.use('/uploads', express.static("uploads"));
+app.use('/uploads', express.static('uploads'));
 
 
 //storage
