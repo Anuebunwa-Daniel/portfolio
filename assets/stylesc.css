@@ -84,10 +84,11 @@ body{
 }
 
 #link{
+    
     height: 20px;
     width: 20px;
-    margin-left:20px;
-    margin-top: 60px;
+    /* margin-left:20px; */
+    /* margin-top: 60px; */
   
 }
 
@@ -113,69 +114,25 @@ body{
         100%{ transform: rotate(360deg);}
         
     } 
- 
+ #pro{
+    display: block;
+    margin:0 auto;
+ }
 
 #linked{
     height: 30px;
     /* width: auto; */
-    margin-left: 450px;
-    margin-top: 40px;
+    /* margin-left: 450px;
+    margin-top: 40px; */
+    /* display:flex; */
+    /* margin:0 auto; */
   
     
 }
 #insta{
     height: 40px;
-    width: 30px;   
+    width: 30px; 
+    /* display:block;
+    margin:0 auto;   */
 }
-
- @media  screen and (max-width: 760px){
-    #linked{
-        margin-left:250px;
-        margin-top: 40px;
-    }
-}
-#gg{
-    display: flex;
-}
-#gm{
-    height: 30px;
-    width: 50px;
-    margin-left:200px;
-    margin-top: 40px;
-}
-#gf{
-    font-size: 20px;
-    font-weight: bold;
-    margin-top:40px;
-
-}
-#gf:hover{
-    font-size: 22px;
-}
-
-@media screen and (max-width:460px){
-    #gg{
-        display:flex;
-    }
-    #gm{
-        margin-left:250px;
-        margin-top: 40px;
-    }
-    #gf{
-        margin-top:40px;
-    }
-}
-@media screen and (min-width:760px){
-    #gg{
-        display:flex;  
-    }
-    #gm{
-        margin-left:450px;
-        margin-top: 40px;
-    }
-}
-
-
-
-    
 

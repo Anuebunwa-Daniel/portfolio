@@ -7,11 +7,13 @@ const path = require('path');
 // const userSchema = require('./userSchema')
 const bcrypt = require('bcrypt')
 const cookieParser =require('cookie-parser')
-const fs = require('fs')
+// const fs = require('fs')
 const jwt = require('jsonwebtoken')
 const multer =require('multer')
 const app  = express()
-const mongodb = 'mongodb+srv://dahumble:A123456s@edward.kkgo9lm.mongodb.net/tochukwu'||
+ const mongodb ='mongodb+srv://dahumble:A123456s@edward.kkgo9lm.mongodb.net/tochukwu'
+//  'mongodb://localhost:27017/Edward'
+  
 
 //  process.env.MONGODB || 'localhost:27017/Edward'
 
@@ -48,11 +50,12 @@ app.post('/upload', upload.single('image'), async(req, res)=>{
         const post = new projectSchema({
             desc : req.body.desc,
             img: req.file.path 
+            // img: req.body.image
         });
        const result = await post.save() 
        console.log(result);
        res.render('success')
-        res.status(200).send(result)
+        // res.status(200).send(result)
     } catch (error) {
         res.render('failed')  
     //   res.status(404).send(error) 
@@ -92,24 +95,25 @@ app.get('/failed', (req, res)=>{
 
 //posting the project page
 // app.post('/project', (req,res)=>{
-//     // const details =req.body
-//     // console.log(details)
-//     res.render('success')
+//     const details =req.body
+//     console.log(details)
+//     // res.render('success')
 
 //     run()
 //     async function run(){
 //         try{
 //             const projects = new projectSchema({
-//                 img:req.file.path,
-//                 desc:req.body.desc,
+//                 img:req.body.image,
+//                 desc:req.body.desc
 //             })
-//             console.log(projects);
+//             // console.log(projects);
 //             await projects.save()
+//             res.render('success')
 //         } catch(err){
 //             console.log(err.message)
+//             res.render('failed')
 //         }
 //     }
-//     res.render('/sucess')
 // })
 
 
