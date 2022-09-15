@@ -89,3 +89,14 @@ img {
 }
 
 
+footer{
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.wrapper{
+    box-shadow: 0 0 20px 0 black;
+}
+
+

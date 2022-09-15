@@ -53,7 +53,7 @@ body{
     font-family: 'Garamond';
     margin-left: 5px;
 }
-@media screen and(max-width: 360px){
+@media screen and(min-width: 360px){
     #one{
         display: flex;
         flex-direction:row;
@@ -69,7 +69,7 @@ body{
     }
 }
 
-@media screen and (min-width:760px){
+@media screen and (max-width:700px){
     #one{
         display: flex;
         flex-direction:column;
@@ -83,56 +83,45 @@ body{
     }   
 }
 
-#link{
-    
-    height: 20px;
-    width: 20px;
-    /* margin-left:20px; */
-    /* margin-top: 60px; */
-  
-}
-
- #link:hover{ 
-    height: 20px;
-    width: 20px;
-    animation-name: lin;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-direction: normal;
-    animation-iteration-count:inherit;
+#ked:hover{ 
+  font-size: 25px;  
  }
-    @keyframes lin {
-        0%{ 
-            transform: rotate(0deg);
-    
-        }
-        25%{ transform: rotate(90deg);
-             
-        }
-        50%{ transform: rotate(180deg);}
-        75%{ transform: rotate(270deg);}
-        100%{ transform: rotate(360deg);}
-        
-    } 
+ #gram:hover{
+    font-size: 25px;
+ }
  #pro{
-    display: block;
-    margin:0 auto;
+  /* border: 1px solid black; */
+  margin-left: 50%;
  }
-
-#linked{
-    height: 30px;
-    /* width: auto; */
-    /* margin-left: 450px;
-    margin-top: 40px; */
-    /* display:flex; */
-    /* margin:0 auto; */
-  
-    
+#gram{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
-#insta{
-    height: 40px;
-    width: 30px; 
-    /* display:block;
-    margin:0 auto;   */
+#ked{
+    font-size: 20px;
+    text-align: center;
+}
+
+#gg{
+    color: rgb(32, 30, 30);
+    font-weight: 800;
+    display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    margin-left: 40%;
+    margin-bottom: 10px;
+}
+#gf{
+    margin: -5px 0 0 10px;   
+}
+
+footer{
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.wrapper{
+    box-shadow: 0 0 20px 0 black;
 }
 
