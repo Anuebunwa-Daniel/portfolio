@@ -6,6 +6,7 @@ body{
     font-weight: 700;
     color: rgb(230, 199, 23);
     margin-left: 30px;
+    font-family: 'roboto';
     
 }
 .navbar-brand:hover{
@@ -15,6 +16,7 @@ body{
     font-size: 20px;
     font-weight: 700;
     color:rgb(194, 173, 53) !important;
+    font-family: 'roboto';
     
 }
 .nav-link:hover{

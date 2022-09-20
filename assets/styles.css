@@ -6,6 +6,7 @@ body{
     font-weight: 700;
     color: rgb(230, 199, 23);
     margin-left: 30px;
+    font-family: 'roboto';
     
 }
 .navbar-brand:hover{
@@ -15,6 +16,7 @@ body{
     font-size: 20px;
     font-weight: 700;
     color:rgb(230, 199, 23) !important;
+    font-family: 'roboto';
     
 }
 
@@ -44,6 +46,13 @@ img {
     font-family: 'Garamond';
 
 
+}
+#resume{
+    border: 1px solid black;
+    color: white;
+    background-color:gray;
+    border-radius: 5px;
+    width: 90px;
 }
 
 @media screen and (max-width: 480px) {
