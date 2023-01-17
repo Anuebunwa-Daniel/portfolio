@@ -13,3 +13,7 @@ module.exports = multer({
     },
   });
 
+  // var storage = multer.diskStorage({
+  //   destination: function (request, file, callback) {
+  //     callback(null, './public/uploads');
+

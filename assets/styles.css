@@ -1,111 +1,31 @@
-body{
-    background-color: rgb(208, 202, 202);
-}
-.navbar-brand{
-    font-size: 30px;
-    font-weight: 700;
-    color: rgb(230, 199, 23);
-    margin-left: 30px;
-    font-family: 'roboto';
-    
-}
-.navbar-brand:hover{
-    color:gold;
-}
-.nav-link {
-    font-size: 20px;
-    font-weight: 700;
-    color:rgb(230, 199, 23) !important;
-    font-family: 'roboto';
-    
+#me{
+    color: purple;
 }
 
-.navbar-toggler{
-    background-color: white;
-    
+#exp{
+    /* border: 2px solid white; */
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    display: block;
+    margin: 10px auto;
+    background-color: purple;
+    border-radius: 7px;
 }
-
-#about{
-    margin-top:70px;
-    color:rgb(207, 181, 34);
-    font-size: 40px;
-    font-weight:bold;
-    text-align: center;
-    font-family: 'Garamond';
-}
-img {
-    height: 400px;
-    margin-right: 10px;
-}
-
-#one {
-    display: flex;
-    font-size: 18.5px;
-    text-align: justify;
-    line-height: 1.6;
-    font-family: 'Garamond';
-
-
-}
-#resume{
-    border: 1px solid black;
+#client{
     color: white;
-    background-color:gray;
-    border-radius: 5px;
-    width: 90px;
 }
 
-@media screen and (max-width: 480px) {
+.about-me{
+    text-align: justify;
+}
 
-    #one{
-        display: flex;
-        flex-direction:row;
-        max-width:100%;
-        font-family: 'Garamond';
-        font-size: 18.5px;
-    }
-    #one img{
-        width: 50%;
-     }
-    #name{ 
+
+@media screen and (min-width:700px){
+    .exp-div{
         display:flex;
-      justify-self: flex-end;
-      font-family: 'Garamond';
+        justify-content: space-between;
+        margin-bottom: 30px;
     }
- } 
-@media screen and (min-width: 769px){
-    #one{
-        display: flex;
-        flex-direction:column;
-        max-width: 100%;
-        font-family: 'Garamond';
-    }
-    #one img{
-        display:block;
-        margin:0 auto;
-
-    }
-
-    
 }
-
-#tech{
-    
-        text-align: justify;
-        line-height: 1.6;
-        font-family: 'Garamond';
-        font-size: 18.5px; 
-}
-
-
-footer{
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.wrapper{
-    box-shadow: 0 0 20px 0 black;
-}
-
-

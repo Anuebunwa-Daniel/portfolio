@@ -1,0 +1,41 @@
+
+#porject-img{
+    border-radius: 0px;
+
+    
+}
+
+@media screen and (min-width:700px){
+    .background{
+        width:100%;
+        height: auto;
+        background-color: ghostwhite;
+        border: 2px solid red;
+        display: block;
+        margin: 20px auto;
+    }
+    #po{
+        width: 650px;
+        height: auto;
+        background-color: rgb(215, 207, 207);
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        margin: 20px auto;
+    }
+     /* .post{
+        width: 650px;
+        height: auto;
+       
+     
+    } */
+  
+   
+    /* .p-project{
+        height: auto;
+        width:170px;
+        word-wrap: break-word;
+        font-family: 'cursive';
+        text-align: center;
+        font-size: 13px;
+    }  */
+}

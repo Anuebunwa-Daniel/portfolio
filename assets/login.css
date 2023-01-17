@@ -1,0 +1,16 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+.log{
+    width: 100px;
+    height: 30px;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    margin: 20px 0px;
+    border-radius: 5px;
+    text-decoration: none;
+    font:'roboto';
+
+}
