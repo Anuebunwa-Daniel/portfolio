@@ -270,6 +270,6 @@ function protectRoute(req, res, next){
 
 const port = 9000
 
-app.listen(port, () => {
+app.listen(process.env.PORT|| port, () => {
     console.log('app started on port')
 })
