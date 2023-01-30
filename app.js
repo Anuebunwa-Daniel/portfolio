@@ -168,6 +168,18 @@ app.post('/registerP', async (req, res) => {
     var email = req.checkBody('email', 'Email field is empty').notEmpty();
     var password = req.check('password', 'Password should contain number,lowercase,uppercase and should be 8 characters and above ').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i");
 
+    var conPassword = req.checkBody('conPassword', 'confirmation password is empty' ).notEmpty()
+    .custom(() => {
+        if (req.body.password === req.body.conPassword) {
+          return true;
+        } else {
+          return false;
+        }
+    })
+    .withMessage("Passwords don't match.");
+
+   
+
     var errors = req.validationErrors();
     if (errors) {
         res.render('registerP', {
@@ -181,6 +193,7 @@ app.post('/registerP', async (req, res) => {
             if (reg_details) {
                 req.flash('danger', 'username already exists')
                 res.render('registerP')
+                
             } else {
                 var newPost = new regSchema({
                     username: req.body.username,
@@ -218,8 +231,7 @@ app.post('/login', async(req, res)=>{
         } else {
             const validPassword = bcrypt.compare(passW, result.password)
             bcrypt.compare(passW, result.password, (err, data) => {
-                                    // console.log(passW)
-                                    console.log(result.password)
+                                    
                                     if (data) {
                                         const payload = {
                                             user: {
@@ -246,63 +258,6 @@ app.post('/login', async(req, res)=>{
 })
 
 
-// app.post('/login', (req, res) => {
-//     const userN = req.body.username
-//     const passW = req.body.password
-
-//     var username = req.checkBody('username', 'username field is empty').notEmpty();
-
-//     var password = req.check('password', 'password field is empty ').notEmpty();
-
-//     var errors = req.validationErrors();
-
-
-
-//     const detail = regSchema.findOne({userN})
-
-    
-//     .then((detail) => {
-//         regSchema.findOne({ username:userN}, (err, reg_details) => {
-//             if (!reg_details) {
-//                 req.flash('danger', 'username does not exists')
-//                 res.render('login')
-//             } else {
-//                 bcrypt.compare(passW, detail.password, (err, data) => {
-//                     // console.log(passW)
-//                     console.log(detail.password)
-//                     if (data) {
-//                         const payload = {
-//                             user: {
-//                                 userN: detail.username
-//                             }
-//                         }
-//                         const token = jwt.sign(payload, 'odunze', {
-//                             expiresIn: '3600s'
-//                         })
-//                         res.cookie('token', token, {
-//                             httpOnly: true
-
-//                         })
-//                         res.redirect('/addProject')
-
-//                     } else {
-//                         req.flash('danger', 'incorrect password ')
-//                         console.log(errors)
-//                         res.render('login', {
-
-//                             errors: errors,
-//                             username: username,
-//                             password: password
-//                         })
-//                     }
-//                 })
-//             }
-                
-//         }).clone().catch((err) => {
-//             console.log(err)
-//         })
-//     })
-// })
 
 function protectRoute(req, res, next){
     const token = req.cookies.token
