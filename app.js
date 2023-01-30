@@ -162,7 +162,7 @@ app.post('/registerP', async (req, res) => {
 
     const salt = await bcrypt.genSalt(1)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
-    console.log(hashedPassword)
+    // console.log(hashedPassword)
 
     var username = req.checkBody('username', 'choose a username').notEmpty();
     var email = req.checkBody('email', 'Email field is empty').notEmpty();
@@ -199,59 +199,110 @@ app.post('/registerP', async (req, res) => {
     }
 })
 
-app.post('/login', (req, res) => {
-    const userN = req.body.username
-    const passW = req.body.password
 
-    var username = req.checkBody('username', 'username field is empty').notEmpty();
+app.post('/login', async(req, res)=>{
+    try {
+        const userN = req.body.username
+        const passW = req.body.password
 
-    var password = req.check('password', 'password field is empty ').notEmpty();
+        const username = req.checkBody('username', 'username field is empty').notEmpty();
 
-    var errors = req.validationErrors();
+        const password = req.check('password', 'password field is empty ').notEmpty();
 
+        const errors = req.validationErrors()
 
-
-    const detail = regSchema.findOne({ username})
-    .then((detail) => {
-        regSchema.findOne({ username: req.body.username }, (err, reg_details) => {
-            if (!reg_details) {
-                req.flash('danger', 'username does not exists')
-                res.render('login')
-            } else {
-                bcrypt.compare(passW, detail.password, (err, data) => {
-                    if (data) {
-                        const payload = {
-                            user: {
-                                userN: detail.username
-                            }
-                        }
-                        const token = jwt.sign(payload, 'odunze', {
-                            expiresIn: '3600s'
-                        })
-                        res.cookie('token', token, {
-                            httpOnly: true
-
-                        })
-                        res.redirect('/addProject')
-
-                    } else {
-                        req.flash('danger', 'incorrect password ')
-                        console.log(errors)
-                        res.render('login', {
-
-                            errors: errors,
-                            username: username,
-                            password: password
-                        })
-                    }
-                })
-            }
+        const result = await regSchema.findOne({username:userN})
+        if (!result) {
+            req.flash('danger', " username does not exist")
+            res.render('login')
+        } else {
+            const validPassword = bcrypt.compare(passW, result.password)
+            bcrypt.compare(passW, result.password, (err, data) => {
+                                    // console.log(passW)
+                                    console.log(result.password)
+                                    if (data) {
+                                        const payload = {
+                                            user: {
+                                                userN: result.username
+                                            }
+                                        }
+                                        const token = jwt.sign(payload, 'odunze', {
+                                            expiresIn: '3600s'
+                                        })
+                                        res.cookie('token', token, {
+                                            httpOnly: true
                 
-        }).clone().catch((err) => {
-            console.log(err)
-        })
-    })
+                                        })
+                                        res.redirect('/addProject')
+                                    }else{
+                                        req.flash('danger', " wrong password")
+                                        res.render('login')
+                                    }
+                                })
+        }
+    } catch (error) {
+        res.status(500).send(error) 
+    }
 })
+
+
+// app.post('/login', (req, res) => {
+//     const userN = req.body.username
+//     const passW = req.body.password
+
+//     var username = req.checkBody('username', 'username field is empty').notEmpty();
+
+//     var password = req.check('password', 'password field is empty ').notEmpty();
+
+//     var errors = req.validationErrors();
+
+
+
+//     const detail = regSchema.findOne({userN})
+
+    
+//     .then((detail) => {
+//         regSchema.findOne({ username:userN}, (err, reg_details) => {
+//             if (!reg_details) {
+//                 req.flash('danger', 'username does not exists')
+//                 res.render('login')
+//             } else {
+//                 bcrypt.compare(passW, detail.password, (err, data) => {
+//                     // console.log(passW)
+//                     console.log(detail.password)
+//                     if (data) {
+//                         const payload = {
+//                             user: {
+//                                 userN: detail.username
+//                             }
+//                         }
+//                         const token = jwt.sign(payload, 'odunze', {
+//                             expiresIn: '3600s'
+//                         })
+//                         res.cookie('token', token, {
+//                             httpOnly: true
+
+//                         })
+//                         res.redirect('/addProject')
+
+//                     } else {
+//                         req.flash('danger', 'incorrect password ')
+//                         console.log(errors)
+//                         res.render('login', {
+
+//                             errors: errors,
+//                             username: username,
+//                             password: password
+//                         })
+//                     }
+//                 })
+//             }
+                
+//         }).clone().catch((err) => {
+//             console.log(err)
+//         })
+//     })
+// })
 
 function protectRoute(req, res, next){
     const token = req.cookies.token
@@ -270,6 +321,6 @@ function protectRoute(req, res, next){
 
 const port = 9000
 
-app.listen(process.env.PORT|| port, () => {
+app.listen(port, () => {
     console.log('app started on port')
 })
