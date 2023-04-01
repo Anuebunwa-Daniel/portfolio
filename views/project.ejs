@@ -7,7 +7,9 @@
             <% posts.forEach(post=>{%>
               <div class="text-center"id="post">
                 <div class="noBold">
-                  <img class="img-fluid" id="porject-img" src="<%= post.url %>" alt="image">
+                  <a data-fancybox="gallery" href="<%= post.url %>">
+                  <img class="img-fluid" id="porject-img" src="<%= post.url %>" alt="">
+                  </a>
                 </div>
 
                 <p class="p-project">
